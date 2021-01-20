@@ -6,6 +6,8 @@ import fr.adopteunchat.dao.IChatDao;
 import fr.adopteunchat.dao.sql.ChatDaoSql;
 import fr.adopteunchat.front.ConsoleMenu;
 import fr.adopteunchat.model.Chat;
+import fr.adopteunchat.model.Personne;
+import fr.adopteunchat.service.PersonneService;
 
 public class Application {
 
@@ -122,31 +124,51 @@ public class Application {
 //		menu.launchApp();
 //		
 		
-		System.out.println("########### Add chat ###########");
-				
-		IChatDao daoChat = new ChatDaoSql();
+//		System.out.println("########### Add chat ###########");
+//				
+//		IChatDao daoChat = new ChatDaoSql();
+//		
+//		Chat monNouveauChat = new Chat("Georges","M",1,"Junior",1,1,"Petit",1,1,"","ghjghjghj",false,false,false,false);
+//		
+////		daoChat.add(monNouveauChat);
+//		
+//		
+//		List<Chat> chats = daoChat.findAll();
+//		
+//		for (Chat chat : chats) {
+//			System.out.println(chat);
+//		}
+//		
+//		daoChat.deleteById(5);
+//		
+//		List<Chat> chatsafter = daoChat.findAll();
+//		
+//		for (Chat chat : chatsafter) {
+//			System.out.println(chat);
+//		}
+//		
+//		System.out.println("\nFIND BY ID");
+//		System.out.println(daoChat.findById(2));
 		
-		Chat monNouveauChat = new Chat("Georges","M",1,"Junior",1,1,"Petit",1,1,"","ghjghjghj",false,false,false,false);
+		PersonneService personneService = new PersonneService();
 		
-//		daoChat.add(monNouveauChat);
+//		List<Personne> personnes = personneService.findAll();
+//		
+//		for (Personne personne : personnes) {
+//			System.out.println(personne);
+//		}
 		
+		Personne jeannine = new Personne("Jill","Jeannine","jeannine.dujardin@gmail.com",
+		"0600000000","12, rue du port 59000 Lille","12345","1967-01-01","Adoptant");
+
+		personneService.add(jeannine);
 		
-		List<Chat> chats = daoChat.findAll();
+		List<Personne> personnes = personneService.findAll();
 		
-		for (Chat chat : chats) {
-			System.out.println(chat);
+		for (Personne personne : personnes) {
+			System.out.println(personne);
 		}
 		
-		daoChat.deleteById(5);
-		
-		List<Chat> chatsafter = daoChat.findAll();
-		
-		for (Chat chat : chatsafter) {
-			System.out.println(chat);
-		}
-		
-		System.out.println("\nFIND BY ID");
-		System.out.println(daoChat.findById(2));
 		
 	}
 

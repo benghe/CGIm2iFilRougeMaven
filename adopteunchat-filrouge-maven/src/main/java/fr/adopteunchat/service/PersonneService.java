@@ -29,7 +29,29 @@ public class PersonneService {
 	
 	public Personne add(Personne entity) {
 		
-		if(!entity.getNom().equals("") && entity.getPassword().length()>=6) {
+		//Check if entity not null
+		if(entity.getNom()==null) {
+			return null;
+		}
+		
+		//Type Check if equals Adoptant ou Refuge
+		boolean Type = false;
+		if(entity.getType().equals("Adoptant") || entity.getType().equals("Refuge")) {
+			Type=true;
+		}
+		
+		
+		// DateNaissance format check
+		String DateNaissance=entity.getDateNaissance();
+		Boolean DateNaissanceCheck=false;
+		Character char1=DateNaissance.charAt(4);
+		Character char2=DateNaissance.charAt(7);
+		
+		if(char1.equals('-') && char2.equals('-')) {
+			DateNaissanceCheck=true;
+		}
+		
+		if(!entity.getNom().equals("") && entity.getPassword().length()>=6 && Type && DateNaissanceCheck) {
 			return daoPersonne.add(entity);
 		}
 		

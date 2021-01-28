@@ -141,7 +141,7 @@ public class PersonneDaoSql extends DaoSql implements IPersonneDao{
 
 		try {
 			this.openConnection();
-			PreparedStatement monStatementInsert = this.connexionSql.prepareStatement(" UPDATE personne SET PER_NOM=?, PER_PRENOM=?, PER_MAIL=?, PER_TELEPHONE=?,PER_ADRESSE=?,"
+			PreparedStatement monStatementInsert = this.connexionSql.prepareStatement("UPDATE personne SET PER_NOM=?, PER_PRENOM=?, PER_MAIL=?, PER_TELEPHONE=?,PER_ADRESSE=?,"
 					+ "PER_PASSWORD=?,PER_DATE_NAISSANCE=?,PER_TYPE=? WHERE PER_ID=?");
 			
 			monStatementInsert.setString(1, entity.getNom());

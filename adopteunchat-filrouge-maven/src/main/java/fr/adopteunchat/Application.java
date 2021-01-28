@@ -158,16 +158,25 @@ public class Application {
 //			System.out.println(personne);
 //		}
 		
-		Personne jeannine = new Personne("Jill","Jeannine","jeannine.dujardin@gmail.com",
-		"0600000000","12, rue du port 59000 Lille","12345","1967-01-01","Adoptant");
-
-		personneService.add(jeannine);
-		
+//		Personne jeannine = new Personne("Jill","Jeannine","jeannine.dujardin@gmail.com",
+//		"0600000000","12, rue du port 59000 Lille","12345","1967-01-01","Adoptant");
+//
+//		personneService.add(jeannine);
+//		
 		List<Personne> personnes = personneService.findAll();
 		
-		for (Personne personne : personnes) {
-			System.out.println(personne);
-		}
+//		for (Personne personne : personnes) {
+//			System.out.println(personne);
+//		}
+		
+		String Date="1968-12-01";
+		Character char1=Date.charAt(4);
+		Character char2=Date.charAt(7);
+		
+		
+		System.out.println(char1.equals('-'));
+		
+		
 		
 		
 	}
